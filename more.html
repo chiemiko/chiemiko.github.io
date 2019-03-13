@@ -400,8 +400,6 @@ function bootstrapStylePandocTables() {
 $(document).ready(function () {
   bootstrapStylePandocTables();
 });
-
-
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
@@ -422,9 +420,37 @@ $(document).ready(function () {
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <ul class="share-buttons">
+  <li><a href="http://www.linkedin.com/in/chiemikato" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/in/chiemikato'; return false;"><img alt="Share on LinkedIn" src="images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20https%3A%2F%2Fwww.linkedin.com%2Fin%2Fchiemikato%2F" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="images/flat_web_icon_set/inverted/Email.png" /></a></li>
+</ul>
+
+<style>
+  ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+</style>
+
     </div>
     <!-- /.container -->
+
+    
   </footer>
 
   <!-- Bootstrap core JavaScript -->
