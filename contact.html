@@ -52,31 +52,29 @@
   <!-- Content section -->
   <section class="py-5">
     <div class="container">
-      <h1>Current Research...</h1>
-      <p class="lead">Let's get in touch!</p>
-      <p> I am looking for others to learn with and from. 
-        <br>
-             
-      </p>
-      
+      <h1>Let's get in touch!</h1>
+      <p class="lead">I am always looking for people to connect with online to learn and share experiences.</p>
     </div>
   </section>
   
+  <!-- CONTACT FORM INFORMATION BELOW -->
   
   <div class="container">
   <form action="action_page.php">
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="Name" placeholder="Your name..">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your contact email..">
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
+    <label for="Concents">Getting in touch about...</label>
+    <select id="Contents" name="country">
+      <option value="1">Recruiting</option>
+      <option value="2">Research Inquiries</option>
+      <option value="3">Coding Inquiries</option>
+      <option value="4">Events</option>
+      <option value="5">Other</option>
     </select>
 
     <label for="subject">Subject</label>
@@ -86,13 +84,46 @@
 
   </form>
 </div>
+
+<style>
+  /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: none; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: none; /* Make sure that padding and width stays in place */
+  margin-top: none; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: none;
+  padding: none;
+}
+</style>
   
  
   <!-- Image Section - set the background image for the header in the line below -->
-  <section class="py-5 bg-image-full" style="background-image: url('https://doc-00-5c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/5r6kalr1irm2r3o5on7qo5dhqs0jv3dg/1552420800000/14218605863160132461/*/18u8AuhEx145THjWcGq0aZLZePyB8fPCz');">
-    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-    <div style="height: 200px;"></div>
-  </section>
+<br>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
