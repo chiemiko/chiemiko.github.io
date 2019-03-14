@@ -82,10 +82,10 @@
   <!-- CONTACT FORM INFORMATION BELOW -->
   
   <div class="container">
-  <form action="action_page.php">
+  <form action="action_page.php" method='get'>
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="Name" placeholder="Your name..">
+    <input type="text" id="fname" name="Name" placeholder="Your name.." value="<?php if(isset($_get['Name'])){echo}?>">
 
     <label for="email">Email</label>
     <input type="text" id="email" name="email" placeholder="Your contact email..">
@@ -116,7 +116,7 @@ input[type=text], select, textarea {
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
+  margin-bottom: none; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
