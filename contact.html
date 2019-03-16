@@ -83,7 +83,21 @@
 <div class="container">
 
 <form action="https://formspree.io/chi3mita@gmail.com" method="POST">
+  <label for="Name">Name</label>
   <input type="text" name="Name" placeholder="Your name..">
+  <label for="_replyto">Email Address</label>
+  <input type="email" name="_replyto" placeholder="Your contact email..">
+  
+    <label for="country">Subject</label>
+      <select id="Contents" name="country">
+      <option value="1">Recruiting</option>
+      <option value="2">Research Inquiries</option>
+      <option value="3">Coding Inquiries</option>
+      <option value="4">Events</option>
+      <option value="5">Other</option>
+    </select>
+    <label for="subject">Message</label>
+
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
   <input type="submit" value="Send">
