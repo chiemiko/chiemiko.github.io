@@ -81,29 +81,22 @@
 <br>
   <!-- CONTACT FORM INFORMATION BELOW -->
 <div class="container">
-<form id='action' action="action.php" method='POST'>
 
-<label for="fname">First Name</label>
-<input type="text" id="fname" name="Name" placeholder="Your name..">
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your contact email..">
-
-    <label for="Concents">Getting in touch about...</label>
-    <select id="Contents" name="country">
+<form action="https://formspree.io/chi3mita@gmail.com" method="POST">
+  <input type="text" name="Name" placeholder="Your name..">
+  <input type="email" name="_replyto" placeholder="Your contact email..">
+      <select id="Contents" name="country">
       <option value="1">Recruiting</option>
       <option value="2">Research Inquiries</option>
       <option value="3">Coding Inquiries</option>
       <option value="4">Events</option>
       <option value="5">Other</option>
     </select>
-
-    <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="submit" value="SEND MESSAGE" class='form-control submit'>
+  <input type="submit" value="Send">
+</form>
 
-  </form>
 </div>
 
 <style>
