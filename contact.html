@@ -15,7 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/full-width-pics.css" rel="stylesheet">
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
 
 <body>
@@ -29,16 +29,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">Home
-              <span class="sr-only">(current)</span>
-            </a> 
+            <span class="sr-only">(current)</span></a> 
           </li> 
           
           <li class="nav-item">
             <a class="nav-link" href="projects.html">Projects</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
@@ -54,57 +53,48 @@
 }
 
 .left {
-  width: 75%;
+  width: 70%;
 }
 
 .right {
-  width: 25%;
+  width: 30%;
 }
 </style>
+
   <!-- Content section -->
   <section class="py-5"> 
     <!--div class="container"-->
     <div class="container">
-      
   <div class="column" style='width:70%'>
       <h1>Let's get in touch!</h1>
-      <p class="lead">I am always looking for people to connect with online to learn and share experiences. 
+      <p class>I am always looking for people to connect with online to learn and share experiences. 
       <br>Connect with me via LinkedIn, or else send me an email below! </p>
    </div>
-  <div class="column">
-<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="chiemikato"><a class="LI-simple-link" href='https://www.linkedin.com/in/chiemikato?trk=profile-badge'>Chiemi Kato</a></div>
-      <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-     
+   
+<div class="column" style='width:30%'>
+<p>
+<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="chiemikato"><a class="LI-simple-link" href='https://www.linkedin.com/in/chiemikato?trk=profile-badge'>Chiemi Kato</a></div>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </div>
+</p>
 </div>
+</section>
 
-  
-  <!-- CONTACT FORM INFORMATION BELOW -->
-  
-  <div class="container">
-  <form id='action' action="action.php" method='POST'>
+<!-- CONTACT FORM INFORMATION BELOW -->
+<div class="container">
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="Name" placeholder="Your name..">
+<br><form action="https://formspree.io/ckato@mail.sfsu.edu" method="POST"></br>
+<br><label for="Name" align='left'>Name</label></br>
+<input type="text" name="Name" placeholder="Your name..">
+<label for="_replyto">Email Address</label>
+<br><input type="email" name="_replyto" placeholder="Your contact email.."></br>
 
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your contact email..">
+<br><label for="subject">Message</label></br>
 
-    <label for="Concents">Getting in touch about...</label>
-    <select id="Contents" name="country">
-      <option value="1">Recruiting</option>
-      <option value="2">Research Inquiries</option>
-      <option value="3">Coding Inquiries</option>
-      <option value="4">Events</option>
-      <option value="5">Other</option>
-    </select>
+<textarea id="subject" name="subject" placeholder="Ask me anything.." style="height:200px"></textarea>
+<input type="submit" value="Send">
+</form>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="SEND MESSAGE" class='form-control submit'>
-
-  </form>
 </div>
 
 <style>
@@ -142,7 +132,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: none;
   padding: none;
-}
+} 
 </style>
   
  
@@ -150,7 +140,7 @@ input[type=submit]:hover {
 <br>
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark" style='height:100%'>
     <div class="container" align='center'>
       <ul class="share-buttons">
   <li><a href="http://www.linkedin.com/in/chiemikato" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/in/chiemikato'; return false;"><img alt="Share on LinkedIn" src="https://www.dropbox.com/s/9tbqtoy64n3onof/LinkedIn.png?raw=1" /></a></li>
