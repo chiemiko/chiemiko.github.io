@@ -1,0 +1,424 @@
+---
+title: "slidesrootpoly"
+author: "Chiemi Kato"
+date: "3/15/2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+\documentclass{beamer}
+\usetheme{default}
+ 
+\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{xcolor} % More color options
+\usepackage{mathdots} % Fix vdots to be round and long instead of short and square
+%\usepackage[utf8]{inputenc} % What does this do?
+% --- My things ---
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Sig}{\mathcal{S}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\charac}[1]{\chi\raisebox{-4bp}{\scriptsize$#1$}} %Axler's characteristic function
+\newcommand{\Ehr}{\text{Ehr}}
+\newcommand{\Poly}{\mathcal{P}}
+\newcommand{\Zono}{\mathcal{Z}}
+\newcommand{\Rect}{\mathcal{R}}
+\newcommand{\Tri}{\mathcal{T}}
+\newcommand{\cone}{\text{cone}}
+\newcommand{\K}{\mathcal{K}}
+
+
+\setbeamercolor{block title}{fg=black,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=black!80} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\newlength{\midcolwid}
+\newlength{\halfcolwid}
+\setlength{\paperwidth}{48in} % A0 width: 46.8in
+\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\halfcolwid}{.11\paperwidth} % approx width of half mid column
+\setlength{\midcolwid}{.22\paperwidth} % makes middle column slightly bigger?
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Spectra of Tropical Laplacians of Classical Root Polytopes}
+\author{Dr. Federico Ardila~~~~~ Chiemi Kato~~~~~ Jewell McMillon~~~~~  Maria Isabel Perez~~~~~ Anna Schindler}
+\institute{Department of Mathematics, San Francisco State University} % Institution(s)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+	\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t]
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+	
+	\begin{column}{\sepwid}\end{column} % Empty spacer column
+	
+	\begin{column}{\onecolwid} % The first column
+		
+		%----------------------------------------------------------------------------------------
+		%	Definitions
+		%----------------------------------------------------------------------------------------
+		\begin{block}{Introduction}
+			Babaee and Huh introduced the tropical Laplacian of a tropical surface. We construct four families of tropical surfaces arising from root polytopes. We compute their spectra, confirming that they have exactly one negative eigenvalue, as anticipated by Babaee and Huh. 
+			\vspace{5mm}
+			\begin{alertblock}{Definitions}
+				\begin{itemize}
+					\item A \textbf{\color{green}polytope} $P$ is the convex hull of finitely many points $V=\{v_1, \dots, v_n\}$ in $\R^d$. 
+					\item  We say $P$ is \textbf{\color{green}balanced} if for each vertex $v\in V$, there exists $c_v \in \R$ such that 
+					\[\sum_ {w \sim v} w = c_vv.\]
+					\item Let $P$ be a balanced polytope. The \textbf{\color{green}tropical Laplacian} $TL(P)$ is a symmetric  $V \times  V$ matrix given by
+					\[TL(P)_{v,w} =\begin{cases} c_v &\text{ if } v= w\\
+					-1 &\text{ if } v \sim w\\
+					0 &\text{ otherwise. }
+					\end{cases}\]
+					\item The \textbf{\color{green}spectrum} of a square matrix $A$ is the set of its eigenvalues.
+				\end{itemize}
+				
+			\end{alertblock}
+
+
+%----------------------------------------------------------------------------------------
+%	Example using A_2
+%----------------------------------------------------------------------------------------
+
+\textbf{\color{red}Example:}\\
+Let $e_i$ be the $i^{th}$ basis vector. 
+\begin{itemize}
+	\item $A_2$ is the convex hull of $\{e_i-e_j : 1 \leq i \neq j \leq 3\}$
+	\item $A_2$ is balanced with $c_v =1$.
+	\item  The tropical Laplacian is given by\\
+	\[TL(P)_{v,w }=\begin{cases} 1  &\text{ if } v= w\\
+	-1 &\text{ if } v \sim w\\
+	0 &\text{ otherwise. }
+	\end{cases}\]
+\end{itemize}
+%______________________FIGURE 1________________________________________
+
+
+\begin{figure}
+	\begin{tabular}{ll}
+		\includegraphics[width=.5\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_2} 
+		&
+		\includegraphics[width=.52\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_2M}
+	\end{tabular}
+	\caption{\hspace{5 mm}The polytope $A_2$}
+\end{figure}
+%______________________________________________________________
+\end{block}
+
+\end{column} % End of the first column
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+	
+	\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+		
+		%%%%%%%%%%%%%%%%%%%%%  START OF COLUMN "2" (2.1) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+			
+			%----------------------------------------------------------------------------------------
+			%	Tropical Laplacian of TYPE A
+			%----------------------------------------------------------------------------------------
+			
+			\begin{block}{The Tropical Laplacian of the Root Polytope $A_{n-1}$}
+				
+				%-----------------------------Definition of A----------------------------------------------
+				\textbf{\color{blue}Definition:} The $(n-1)$-dimensional \textbf{\color{green} type A root system polytope} $A_{n-1}$ is the convex hull of \[\{e_i-e_j : 1\leq i \neq j \leq n\}.\]
+				%-----------------------------Proposition of A balanced-----------------------------------
+				\textbf{\color{blue}Proposition:} The root polytope $A_{n-1}$ is balanced. 
+				\vspace{10mm}
+				%------------------------------------------------------------------------------------------
+				The \textbf{\color{green}tropical Laplacian} of $A_{n-1}$ is given by
+				
+				%_________________________FIGURELESS IMAGE_________________________________________
+				\begin{footnotesize}
+					\[TL(A_{n-1})_{ij,k\ell}= \begin{cases} n-2 & \text{ if } i=k \text{ and } j=\ell\\
+					-1 & \text{ if } i=k \text{ and } j\neq \ell \text{ or } j\neq k \text{ and } j=\ell\\
+					0& \text{ otherwise. } \end{cases}\] 
+				\end{footnotesize}
+				\vspace{25pt}
+				%_______________________________________________________________________________________
+				
+				%----------------------------------------------------------------------------------------
+				%	Example of A_3
+				%----------------------------------------------------------------------------------------
+				
+				%______________________FIGURE 2________________________________________
+				
+				\begin{figure}
+					\includegraphics[width=.57 \linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_3}
+					\caption{\hspace{5 mm}The polytope $A_3$. ($e_i-e_j$ is denoted by $ij$)}
+					\label{A_3}
+				\end{figure}
+				%______________________________________________________________
+				
+				
+				%----------------------------------------------------------------------------------------
+				%	Theorem 
+				%----------------------------------------------------------------------------------------
+				
+				\begin{alertblock}{Theorem}
+					
+					The \textbf{\color{green}spectrum} of $TL(A_{n-1})$ is
+					\[2-n,\;\underbrace{0, \cdots, 0}_{n-1},\; \underbrace{2, \cdots, 2}_{n-1},\; \underbrace{n ,\dots, n}_{n^2-3n+1}.\]
+					In particular, $TL(A_{n-1})$ has exactly one negative eigenvalue.
+					
+				\end{alertblock} 
+				Let $\stackrel{\leftrightarrow}{K_{n}}$ be a complete directed graph on $n$ vertices with edges corresponding to the vertices of $A_{n-1}$. In particular, the edge that has vertex $i$ as a source and a vertex $j$ as a sink corresponds to the vertex $e_i -e_j$.\\
+				\begin{columns}[t,totalwidth=\midcolwid] % Split up the two columns wide column again
+					\begin{column}{\halfcolwid}\vspace{-.6in}\\ % The first column within column 2 (column 2.1)
+						\vspace{20pt}		
+						\textbf{\color{red}Example:}
+						\vspace{24pt}
+						%______________________FIGURE 3________________________________________
+						
+						\begin{figure}
+							\label{A_2'}
+							\includegraphics[width=0.50\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_2'}
+							\caption{\hspace{5 mm}The graph of $\stackrel{\leftrightarrow}{K_{2}}$}
+						\end{figure}
+						%______________________________________________________________
+					\end{column}
+					\begin{column}{\halfcolwid}\vspace{1in} % The second column within column 2 (column 2.2)
+						%______________________FIGURE 4________________________________________
+						
+						\begin{figure}
+							\label{A_3'}
+							\includegraphics[width=0.50\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_3'}
+							\caption{\hspace{5 mm}The graph of $\stackrel{\leftrightarrow}{K_{3}}$}
+						\end{figure}
+						%______________________________________________________________
+					\end{column} % End of column 
+				\end{columns} % End of the split of column 2
+			\end{block}
+			
+			%----------------------------------------------------------------------------------------
+			
+		\end{column} 
+		
+		%%%%%%%%%%%%%%%%%%%%%  END OF COLUMN "2" (2.1) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+			
+			%%%%%%%%%%%%%%%%%%%%%  START OF COLUMN "3" (2.2) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%----------------------------------------------------------------------------------------
+			%	Eigenvectors of TL(A)
+			%----------------------------------------------------------------------------------------
+			
+			\begin{block}{Eigenvectors of $TL(A_{n-1})$}
+				
+				Eigenvectors of $TL(A_{n-1})_{ij,k\ell}$  can be represented by weighted subgraphs of $\stackrel{\leftrightarrow}{K_{n}}$.
+				\vspace{24pt}
+				%----------------------------------------------------------------------------------------
+				%	Example of Eigenvector Graphs
+				%----------------------------------------------------------------------------------------
+				
+				%______________________FIGURE 5________________________________________
+				
+				\begin{figure}
+					\begin{tabular}{ll}
+						\includegraphics[width=.5\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_2V2}
+						&
+						\includegraphics[width=.49\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_3V1}
+					\end{tabular}
+					\caption{\hspace{5 mm}Eigenvectors of $\lambda=0$ for $TL(A_2)$ and $TL(A_3)$}
+				\end{figure}
+				
+				%____________________________________________________________________________
+				%----------------------------------------------------------------------------------------
+				%	Eigenvectors Corresponding to 0
+				%----------------------------------------------------------------------------------------
+				
+				\begin{alertblock}{Eigenvectors of $TL(A_{n-1})$}
+					%______________________FIGURE 6________________________________________
+					\begin{columns}[t,totalwidth=\midcolwid] % Split up the two columns wide column again
+						\begin{column}{\halfcolwid}\vspace{-.6in}\\ % The first column within column 2 (column 2.1)
+							\begin{figure}
+								\label{A_nV-}
+								\includegraphics[width=.85\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_nV-}
+								\caption{\hspace{2 mm} $\lambda=2-n$}
+							\end{figure}
+						\end{column}
+						%______________________________________________________________
+						%______________________FIGURE 7________________________________________
+						\begin{column}{\halfcolwid}\vspace{-.6in}\\ % The first column within column 2 (column 2.1)
+							\begin{figure}
+								\label{A_nV0}
+								\includegraphics[width=.85\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_nV0}
+								\caption{\hspace{2 mm} $\lambda=0$}
+							\end{figure}
+						\end{column}
+					\end{columns}
+					%______________________________________________________________
+					%______________________FIGURE 8________________________________________
+					\begin{columns}[t,totalwidth=\midcolwid] % Split up the two columns wide column again
+						\begin{column}{\halfcolwid}\vspace{-.6in}\\ % The first column within column 2 (column 2.1)
+							\begin{figure}
+								\label{A_nV2}
+								\includegraphics[width=.85\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_nV2}
+								\caption{\hspace{2 mm} $\lambda=2$}
+							\end{figure}
+						\end{column}
+						%______________________________________________________________
+						%______________________FIGURE 9________________________________________
+						\begin{column}{\halfcolwid}\vspace{-.6in}\\ % The first column within column 2 (column 2.1)
+							\begin{figure}
+								\label{A_nVn}
+								\includegraphics[width=.85\linewidth]{/Users/housebot/Documents/T_poster/JPGs/A_nVn}
+								\caption{\hspace{2 mm} $\lambda=n$}
+							\end{figure}
+						\end{column}
+					\end{columns}
+					%______________________________________________________________
+				\end{alertblock}
+			\end{block}
+			\begin{block}{Root Polytopes $B_n, C_n$ and $D_n$}
+				The root polytopes are defined as follows
+				\begin{itemize}
+					\item $D_n = \{\pm e_i \pm e_j: 1 \leq i \neq j \leq n\}$
+					\item $B_n = D_n \cup \{\pm e_i: 1 \leq i \neq j \leq n\}$
+					\item $C_n = D_n \cup \{\pm 2e_i: 1 \leq i \neq j \leq n\}$
+				\end{itemize}
+				%-----------------------------Proposition of B,C,D balanced----------------------------------------------
+				\vspace{25pt}
+				\textbf{\color{blue}Proposition:} The root polytope $B_n, C_n$ and $D_n$ are balanced. 
+				
+				%----------------------------------------------------------------------------------------
+			\end{block}
+			
+			%----------------------------------------------------------------------------------------
+			
+		\end{column} 
+	\end{columns} 
+\end{column} % End of column 3
+%%%%%%%%%%%%%%%%%%%%%  END OF COLUMN "3" (2.2) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%  START OF COLUMN "4" (3) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{column}{\onecolwid} 
+	
+	%----------------------------------------------------------------------------------------
+	%	Root Polytopes B,C,D
+	%----------------------------------------------------------------------------------------
+	%\begin{center}
+	%\begin{align*}
+	%D_n &= \{\pm e_i \pm e_j: 1 \leq i \neq j \leq n\}\\
+	%B_n &= D_n \cup \{\pm e_i: 1 \leq i \neq j \leq n\}\\
+	%C_n &= D_n \cup \{\pm 2e_i: 1 \leq i \neq j \leq n\}
+	%\end{align*}
+	%\end{center}
+	%______________________FIGURE 8________________________________________
+	\vspace{-.65in}
+	\begin{figure}
+		\begin{figure}
+			\includegraphics[width=.35\linewidth]{/Users/housebot/Documents/T_poster/JPGs/B_3P}
+		\end{figure}
+		\begin{figure}
+			\includegraphics[width=.35\linewidth]{/Users/housebot/Documents/T_poster/JPGs/C_3P}
+		\end{figure}
+		\begin{figure}
+			\includegraphics[width=.35\linewidth]{/Users/housebot/Documents/T_poster/JPGs/D_3P}
+		\end{figure}
+		\caption{\hspace{5 mm}The polytopes $B_3$, $C_3$ and $D_3$}
+	\end{figure}
+	%______________________________________________________________
+	%	Conjectures
+	%----------------------------------------------------------------------------------------
+	\vspace{-20pt}
+	\begin{block}{Spectra of $B_n$, $C_n$ and $D_n$}
+		\begin{alertblock}{Conjectures}
+			The \textbf{\color{green}spectrum} of $TL(B_n)$ is 
+			\begin{scriptsize}
+				\[ \frac{3\pm \sqrt{16n^2-40n+33}}{2}, \underbrace{0}_n, \underbrace{ \frac{2n+3\pm\sqrt{4n^2-20n+33}}{2}}_{n-1},\underbrace{2n-3}_{\frac{n(n-1)}{2}}, \underbrace{2n-1}_{n(n-1)}, \underbrace{2n+1}_{\frac{n(n-3)}{2}}\]
+			\end{scriptsize}
+			The \textbf{\color{green}spectrum} of $TL(C_n)$ is 
+			\begin{scriptsize}
+				\[\frac{(5-n)\pm \sqrt{9n^2-26n+33}}{2}, \underbrace{0}_n,\underbrace{ \frac{(5+n)\pm\sqrt{n^2-6n+33}}{2}}_{n-1}, \]\[\underbrace{n+1}_{n-1}, \underbrace{2(n-1)}_{\frac{n(n-1)}{2}}, \underbrace{2n}_{n(n-2)}
+				,\underbrace{2(n+1)}_{\frac{n(n-3)}{2}}\]
+			\end{scriptsize}
+			The \textbf{\color{green}spectrum} of $TL(D_n)$ is 
+			\begin{footnotesize}
+				\[2(2-n), \underbrace{4}_{n-1},\underbrace{0}_{n},\underbrace{2n}_{\frac{n(n-3)}{2}}, \underbrace{2(n-2)}_{\frac{n(n-1)}{2}},\underbrace{2(n-1)}_{n(n-2)}\]
+			\end{footnotesize}
+		\end{alertblock} 
+		\vspace{-20pt}
+		In particular, $B_n$, $C_n$ and $D_n$ have exactly one negative eigenvalue.
+	\end{block}
+	%----------------------------------------------------------------------------------------
+	%	REFERENCES
+	%----------------------------------------------------------------------------------------
+	\vspace{-.6in}
+	\begin{block}{References}
+		%\nocite{*} % Insert publications even if they are not cited in the poster
+		\small{\bibliographystyle{amsalpha}
+			\nocite{babaee}
+			\nocite{annathesis}
+			\bibliography{bib}\vspace{0.75in}}
+		
+	\end{block}
+	
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
