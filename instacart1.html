@@ -20502,8 +20502,8 @@ Ln3WM/VaiQAAAABJRU5ErkJggg=="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-3:-K-Nearest-Neighbor-(KNN)-Regression">Model 3: K Nearest Neighbor (KNN) Regression<a class="anchor-link" href="#Model-3:-K-Nearest-Neighbor-(KNN)-Regression">&#182;</a></h2><p>Next we will look at K Nearest Neighbor (KNN) regression, which applies distance formulas to locate points that are nearest to our training data points. Once this is done, a prediction model is fitted using the labels that are the most frequently out of each k neighbor group for each data point.</p>
-<p>An important piece of information to consider is that the KNN regression requires that all predictors used in the model to be numeric. Thus, we will take out of consideration the following variables, which are not numeric or ordinal: user_id, eval_set, order_number, order_dow, product_name, product_id, aisle_id, department_id)</p>
+<h2 id="Model-3:-K-Nearest-Neighbor-(KNN)-Regression">Model 3: K Nearest Neighbor (KNN) Classification<a class="anchor-link" href="#Model-3:-K-Nearest-Neighbor-(KNN)-Regression">&#182;</a></h2><p>Next we will look at K Nearest Neighbor (KNN) classification, which applies distance formulas to locate points that are nearest to our training data points. Once this is done, a prediction model is fitted using the labels that are the most frequently out of each k neighbor group for each data point.</p>
+<p>An important piece of information to consider is that the KNN classification requires that all predictors used in the model to be numeric. Thus, we will take out of consideration the following variables, which are not numeric or ordinal: user_id, eval_set, order_number, order_dow, product_name, product_id, aisle_id, department_id)</p>
 <p>As for the ordinal categorical predictor variables (ie total_orders, product_orders_total, add_to_cart_order, order_hour_of_day), we will coerce these variables to be continuous instead of discrete.</p>
 
 </div>
@@ -20673,7 +20673,7 @@ Ln3WM/VaiQAAAABJRU5ErkJggg=="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Often-with-KNN,-the-scale-of-the-predictor-variables-should-be-considered-so-that-variables-with-larger-numbers-will-not-dominant-the-regression-over-those-with-smaller-values-(since-distances-between-points-are-evaluated-to-locate-the-K-nearest-neighbors).">Often with KNN, the scale of the predictor variables should be considered so that variables with larger numbers will not dominant the regression over those with smaller values (since distances between points are evaluated to locate the K nearest neighbors).<a class="anchor-link" href="#Often-with-KNN,-the-scale-of-the-predictor-variables-should-be-considered-so-that-variables-with-larger-numbers-will-not-dominant-the-regression-over-those-with-smaller-values-(since-distances-between-points-are-evaluated-to-locate-the-K-nearest-neighbors).">&#182;</a></h4><p>Thus, below we make sure to normalize each of the variables used in the KNN regression training and test sets.</p>
+<h4 id="Often-with-KNN,-the-scale-of-the-predictor-variables-should-be-considered-so-that-variables-with-larger-numbers-will-not-dominant-the-regression-over-those-with-smaller-values-(since-distances-between-points-are-evaluated-to-locate-the-K-nearest-neighbors).">Often with KNN, the scale of the predictor variables should be considered so that variables with larger numbers will not dominant the classification over those with smaller values (since distances between points are evaluated to locate the K nearest neighbors).<a class="anchor-link" href="#Often-with-KNN,-the-scale-of-the-predictor-variables-should-be-considered-so-that-variables-with-larger-numbers-will-not-dominant-the-regression-over-those-with-smaller-values-(since-distances-between-points-are-evaluated-to-locate-the-K-nearest-neighbors).">&#182;</a></h4><p>Thus, below we make sure to normalize each of the variables used in the KNN classification training and test sets.</p>
 
 </div>
 </div>
@@ -20991,14 +20991,14 @@ knn.pred      0      1
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="K-Fold-Cross-Validation-to-Optimize-K-for-KNN-Regression">K-Fold Cross Validation to Optimize K for KNN Regression<a class="anchor-link" href="#K-Fold-Cross-Validation-to-Optimize-K-for-KNN-Regression">&#182;</a></h3>
+<h3 id="K-Fold-Cross-Validation-to-Optimize-K-for-KNN-Regression">K-Fold Cross Validation to Optimize K for KNN Classification<a class="anchor-link" href="#K-Fold-Cross-Validation-to-Optimize-K-for-KNN-Regression">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Cross-Validation is a commonly used method to to test the performance reliability of a model on different groupings of unseen data. For KNN regression, we will consider a variety of different K values that select the K nearest neighbors of the training data. We will compute 10 different KNN regression models using different K values from 1 to 10. We will then select the model with the lowest test/validation error as the final model to use.</p>
+<p>Cross-Validation is a commonly used method to to test the performance reliability of a model on different groupings of unseen data. For KNN classification, we will consider a variety of different K values that select the K nearest neighbors of the training data. We will compute 10 different KNN classification models using different K values from 1 to 10. We will then select the model with the lowest test/validation error as the final model to use.</p>
 
 </div>
 </div>
