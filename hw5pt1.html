@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    
+	<center>
+	<h1 style="text-align: center"> HW 5 PART 1 PAGE </h1>
+	<div id="errorMessage"></div>
+
+    <form name="RegForm" action="submit.html" onsubmit="return validateForm()" method="post">
+	
+        <table>
+	
+            <tr>
+                <td>Name: </td>
+                <td>
+                    <input type="text" size=20 name="name"> </td>
+            </tr>
+            <tr>
+                <td>Gender: </td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female</td>
+            </tr>
+            <tr>
+                <td>Hobbies: </td>
+                <td>
+                    
+      
+            <label><input type="checkbox" name="hobbies[]" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies[]" value="movies"> Movies</label>
+            <label><input type="checkbox" name="hobbies[]" value="music"> Music</label>
+					
+					</td>
+            </tr>
+
+            <tr>
+                <td>Select your course</td>
+                <td>
+                    <select type="text" value="" name="subject">
+						<option>Select subject ...</option>
+                        <option>Math</option>
+                        <option>English</option>
+                        <option>Political Science</option>
+                        <option>Ethnic Studies</option>
+                
+                    </select>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+            </tr>
+			     <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit" name="Submit">
+                    <input type="reset" value="Reset" name="Reset">
+                </td>
+            </tr>
+    </form>
+	</center>
+</body>
+<script>
+function validateForm()						 
+{ 
+	var name = document.forms["RegForm"]["name"];		
+	var subject = document.forms["RegForm"]["subject"];		
+	var gender = document.forms["RegForm"].gender.value;
+    var hobbies = [];
+    var checkboxes = document.getElementsByName("hobbies[]");
+    for(var i=0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked) {
+            hobbies.push(checkboxes[i].value);
+        }
+    }
+	
+	var errorMsg = "";
+	var validForm = true;
+	if (name.value == "")								 
+	{ 
+		errorMsg = errorMsg + "Please enter a name.<br>"; 
+		name.focus(); 
+		validForm = false; 
+	} 
+
+	if (subject.selectedIndex < 1)				 
+	{ 
+		errorMsg = errorMsg + "Please select a course.<br>"; 
+		subject.focus(); 
+		validForm = false; 
+	} 
+	
+	if(gender == "")				 
+	{ 
+		errorMsg = errorMsg + "Please select a gender.<br>"; 
+		validForm = false; 
+	} 
+	
+	if(hobbies.length == 0) 
+	{
+		errorMsg = errorMsg + "Please select a hobby.<br>"; 
+		validForm = false; 
+	}
+	document.getElementById("errorMessage").innerHTML = errorMsg; 
+	return validForm; 
+}  
+
+</script>
+
+<footer>
+    <ul>
+      <li><a href=hw5.html>Homework 5 Main Page</a></li>
+      <li><a href=hw5pt2.html>Homework 5 Part 2</a></li>
+      <li><a href=hw5pt3.html>Homework 5 Part 3</a></li>
+
+    </ul>
+    
+    <a href=index.html>Back to main page</a>
+    </footer>
+
+</html>
