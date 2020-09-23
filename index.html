@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
- 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<head> 
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Chiemi Kato Home</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate Css Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Social Media Icon Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
   <!-- Custom styles for this template -->
   <link href="css/full-width-pics.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -45,71 +45,52 @@
     </div>
   </nav>
  
-  <!-- Header - set the background image for the header in the line below -->
-  <header class="py-5 bg-image-full" style="background-image: url('images/architecture.jpg');">
-    <img class="https://www.dropbox.com/s/lxevgp6e8o1bqkg/main.jpg?raw=1"  width="20%" height="20%" alt="">
-  </header>
 
   <!-- Content section -->
-  <section class="py-5">
-    <div class="container">
-      <h1>Chiemi Kato</h1>
-      <p class="lead">Love who you are and what you do.</p>
-      <p>In the past few years, I have built up my academic and professional credibility on one simple principle: Work smarter, not harder. I have a hunger for learning new technologies as a way to operate more efficiently, 
-        and I am passionate about revolutionizing how big data is used to drive cost and performance improvements. 
-        <br><br>
-        I recently finished my Bachelor's degree in Applied Mathematics at SFSU and I am looking to continue my growth as a data engineer with a focus on delivering high-impact, scalable software solutions.
-   
-        
-        
-      </p>
+  <div class="img-drop">
+    <div data-aos="fade-down"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out">
+        <h1>Hi, I'm Chiemi Kato</h1>
+        <h3>Data Engineer. Data Scientist. </h3>
+          <p> Let's get connected.</p>     
+          <div class="share-buttons">
+              <a href="http://www.linkedin.com/in/chiemikato" class="fa fa-linkedin" aria-hidden="true"target="_blank" title="Share on LinkedIn"></a>
+              <a href="mailto:chiemickato@gmail.com?Subject=Hello!" class="fa fa-envelope" aria-hidden="true" target="_blank" title="Send email"></a>
+              <a href="https://github.com/chiemiko" class="fa fa-github" aria-hidden="true" target="_blank" title="See past work"></a>
+          </div>
     </div>
-  </section>
- 
-  <!-- Image Section - set the background image for the header in the line below -->
-  <section class="py-5 bg-image-full" style="background-image: url('images/architecture.jpg');">
-    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-    <div style="height: 200px;"></div>
-  </section>
+        <a class="smoothscroll" href="#sect">
+          <i class="fa fa-arrow-circle-down"></i>
+        </a>
+  </div> 
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container" align='center'>
-      <ul class="share-buttons">
-  <li><a href="http://www.linkedin.com/in/chiemikato" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/in/chiemikato'; return false;"><img alt="Share on LinkedIn" src="https://www.dropbox.com/s/9tbqtoy64n3onof/LinkedIn.png?raw=1" /></a></li>
-  <li><a href="mailto:?subject=&body=:%20https%3A%2F%2Fwww.linkedin.com%2Fin%2Fchiemikato%2F" target="_blank" title="Send email" onclick="window.open('mailto:ckato@mail.sfsu.edu'); return false;"><img alt="Send email" src="https://www.dropbox.com/s/cakzr5qr7z1rjwi/Email.png?raw=1" /></a>
-    </li>
-</ul>
+  <div class="about-sect" id="sect">
+    <img src="./images/main.jpg" alt="profile-img">
 
-<style>
-  ul.share-buttons{
-  list-style: none;
-  padding: 0;
-}
-
-ul.share-buttons li{
-  display: inline;
-}
-
-ul.share-buttons .sr-only{
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-</style>
-
-    </div>
-  </footer>
+    <section>
+        <h1>Chiemi Kato</h1>
+        <p class="lead"><b>Love who you are and what you do.</b></p>
+        <p>I have a <b>hunger for learning new technologies</b> as a way to operate more efficiently 
+          and I am passionate about <b>revolutionizing how big data is used to drive cost and performance improvements</b>. 
+          <br><br>
+          I recently finished my Bachelor's degree in Applied Mathematics at SFSU and <b>I am looking to continue my growth as a data engineer</b> with a focus on designing scalable, high-impact software solutions.  
+        </p>
+    </section>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Animate Js Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
  
 </body> 
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<!-- <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> -->
 </html>

@@ -3,14 +3,124 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-width-pics/blob/master/LICENSE)
  */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 56px;
 }
 
-.bg-image-full {
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+.img-drop{
+  background-image: url(../images/architecture.jpg);
   background-size: cover;
-  -o-background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.img-drop h1{
+  padding-top: 5em;
+  padding-bottom: 20px;
+}
+
+.img-drop p {
+  padding: 10px 0;
+}
+
+.smoothscroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -29px;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #fff;
+  border-radius: 100%;
+}
+
+.sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: black;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.about-sect {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px 0 20px;
+  height: 100vh;
+}
+
+.about-sect img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 50%;
+  max-height: 500px;
+}
+
+.about-sect section{
+  padding: 0 30px;
+}
+
+.project-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.display-3 {
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+  transition: all 0.3s
+}
+
+.foot {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .about-sect {
+    display: block;
+    text-align: center;
+  }
+
+  .fa-arrow-circle-down {
+    color: #fff !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .img-drop h1, .img-drop h3, .img-drop p, .fa {
+    color: white;
+  }
 }
